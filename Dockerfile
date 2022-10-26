@@ -10,5 +10,5 @@ RUN chown -R demo:demo /app && chmod -R 755 /app && chown -R demo:demo /var/cach
 RUN touch /var/run/nginx.pid && chown  demo:demo /var/run/nginx.pid
 USER demo
 
-#COPY dist/smarthr /app
+COPY README.md /app
 EXPOSE 80
