@@ -1,0 +1,20 @@
+services:
+  - docker:dind
+  
+stages:          # List of stages for jobs, and their order of executions
+  #- build
+  - publish 
+  
+
+
+push-docker-registry:
+  image: docker:latest
+  stage: publish
+  script:
+    - docker build -t latest  .
+    - docker login -u dev_ci -p $CI_USER_PASS git.qeema.io:5050
+    - docker push latest
+
+
+
+
