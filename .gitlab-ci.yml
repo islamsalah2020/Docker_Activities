@@ -11,7 +11,7 @@ push-docker-registry:
   image: docker:latest
   stage: publish
   script:
-    - docker login -u dev_ci -p $CI_USER_PASS git.qeema.io:5050
+    - docker login -u dev_ci -p $token git.qeema.io:5050
     - docker build -t git.qeema.io:5050/qeema-platfrom/demo_repo:latest .
     
     - docker push git.qeema.io:5050/qeema-platfrom/demo_repo --all-tags
