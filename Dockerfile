@@ -11,4 +11,4 @@ RUN touch /var/run/nginx.pid && chown  demo:demo /var/run/nginx.pid
 USER demo
 
 COPY README.md /app
-EXPOSE 80
+EXPOSE 9090
